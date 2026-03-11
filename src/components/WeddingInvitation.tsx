@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import groomImg from "@/assets/groom.png";
-import brideImg from "@/assets/bride.png";
+import groomImg from "@/assets/groom.jpeg";
+import brideImg from "@/assets/bride.jpeg";
 
 const GoldParticles = () => {
   const particles = Array.from({ length: 20 }, (_, i) => ({
@@ -111,25 +111,10 @@ const WeddingInvitation = () => {
 
         {/* ===== PHASE 2 & 3: Images with names ===== */}
         <div className="absolute left-0 right-0 top-[9vh] md:top-[4vh] flex flex-row items-start justify-between z-10 px-[2.5%] md:px-[3%]">
-          {/* Groom - left side, cropped tight */}
+          {/* Bride - left side, cropped tight */}
           <motion.div
             className="order-1 relative h-[46vh] md:h-[66vh] w-[47%] md:w-[41%] overflow-hidden rounded-b-2xl md:rounded-b-3xl"
             style={{ x: groomX, opacity: imagesOpacity }}
-          >
-            <img
-              src={groomImg}
-              alt="Ditto Jose - Groom"
-              className="w-full h-full object-cover object-top"
-              style={{ mixBlendMode: "multiply" }}
-            />
-            <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-background to-transparent" />
-            <div className="hidden md:block absolute top-0 right-0 bottom-0 w-1/4 bg-gradient-to-l from-background to-transparent" />
-          </motion.div>
-
-          {/* Bride - right side, cropped tight */}
-          <motion.div
-            className="order-2 relative h-[46vh] md:h-[66vh] w-[47%] md:w-[41%] overflow-hidden rounded-b-2xl md:rounded-b-3xl"
-            style={{ x: brideX, opacity: imagesOpacity }}
           >
             <img
               src={brideImg}
@@ -138,6 +123,23 @@ const WeddingInvitation = () => {
               style={{ mixBlendMode: "multiply", objectPosition: "58% 8%" }}
             />
             <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-background to-transparent" />
+            <div className="absolute inset-0 md:hidden bg-[linear-gradient(to_bottom,hsl(var(--background))_0%,transparent_14%,transparent_84%,hsl(var(--background))_100%),linear-gradient(to_right,hsl(var(--background))_0%,transparent_10%,transparent_90%,hsl(var(--background))_100%)]" />
+            <div className="hidden md:block absolute top-0 right-0 bottom-0 w-1/4 bg-gradient-to-l from-background to-transparent" />
+          </motion.div>
+
+          {/* Groom - right side, cropped tight */}
+          <motion.div
+            className="order-2 relative h-[46vh] md:h-[66vh] w-[47%] md:w-[41%] overflow-hidden rounded-b-2xl md:rounded-b-3xl"
+            style={{ x: brideX, opacity: imagesOpacity }}
+          >
+            <img
+              src={groomImg}
+              alt="Ditto Jose - Groom"
+              className="w-full h-full object-cover object-top"
+              style={{ mixBlendMode: "multiply" }}
+            />
+            <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-background to-transparent" />
+            <div className="absolute inset-0 md:hidden bg-[linear-gradient(to_bottom,hsl(var(--background))_0%,transparent_14%,transparent_84%,hsl(var(--background))_100%),linear-gradient(to_right,hsl(var(--background))_0%,transparent_10%,transparent_90%,hsl(var(--background))_100%)]" />
             <div className="hidden md:block absolute top-0 left-0 bottom-0 w-1/4 bg-gradient-to-r from-background to-transparent" />
           </motion.div>
         </div>
@@ -148,12 +150,12 @@ const WeddingInvitation = () => {
           style={{ opacity: namesOpacity, y: namesY }}
         >
           <div className="order-1 text-center w-[47%] md:w-[41%] py-1.5 md:py-3 px-1 md:px-4">
-            <p className="font-body text-gold text-[10px] md:text-xs tracking-[0.18em] md:tracking-[0.22em] uppercase">Groom</p>
-            <p className="font-display text-base md:text-2xl font-semibold text-maroon leading-tight mt-0.5">Ditto Jose</p>
-          </div>
-          <div className="order-2 text-center w-[47%] md:w-[41%] py-1.5 md:py-3 px-1 md:px-4">
             <p className="font-body text-gold text-[10px] md:text-xs tracking-[0.18em] md:tracking-[0.22em] uppercase">Bride</p>
             <p className="font-display text-base md:text-2xl font-semibold text-maroon leading-tight mt-0.5">Shalin Thomas</p>
+          </div>
+          <div className="order-2 text-center w-[47%] md:w-[41%] py-1.5 md:py-3 px-1 md:px-4">
+            <p className="font-body text-gold text-[10px] md:text-xs tracking-[0.18em] md:tracking-[0.22em] uppercase">Groom</p>
+            <p className="font-display text-base md:text-2xl font-semibold text-maroon leading-tight mt-0.5">Ditto Jose</p>
           </div>
         </motion.div>
 
@@ -176,7 +178,7 @@ const WeddingInvitation = () => {
               <p className="font-script text-gold text-base md:text-3xl mt-1.5">Together with their families</p>
               <div className="w-16 h-[1.5px] gradient-gold mx-auto my-2.5 rounded-full" />
               <h1 className="font-display text-2xl md:text-4xl font-semibold text-maroon tracking-tight">
-                Ditto & Shalin
+                Shalin & Ditto
               </h1>
               <p className="font-script text-gold text-xs md:text-lg mt-1.5">
                 request the honour of your presence
@@ -199,7 +201,7 @@ const WeddingInvitation = () => {
                 Lourdes Matha Church, Paippad
               </p>
               <a
-                href="https://share.google/A74AFjMktJ5OQwlNj"
+                href="https://maps.app.goo.gl/jfSdfsZfG3XeSQ5r5?g_st=ic"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1 mt-1.5 font-body text-gold text-xs md:text-sm hover:text-gold-dark transition-colors underline underline-offset-4"
@@ -218,13 +220,13 @@ const WeddingInvitation = () => {
             {/* Family Details - inside the card */}
             <div className="hidden md:flex flex-col md:flex-row justify-between items-center md:items-start px-4 md:px-10 py-3 md:py-4 pb-5 md:pb-6 gap-3 md:gap-0">
               <div className="flex-1 text-center">
-                <p className="font-display text-sm md:text-lg font-semibold text-foreground">Ditto Jose</p>
+                <p className="font-display text-sm md:text-lg font-semibold text-foreground">Shalin Thomas</p>
                 <p className="font-body text-muted-foreground text-[11px] md:text-sm mt-1">
-                  S/o Elsy Jose & Jose Joseph
+                  D/o Deenamma Thomas & Thomas M.T
                 </p>
                 <p className="font-body text-muted-foreground text-[11px] md:text-sm mt-1 leading-snug">
-                  Padinjarekuttu House<br />
-                  Mutholapuram P.O, Ernakulam
+                  Muttathettu P.C, Kavala P.O<br />
+                  Paippad, Changanacherry, Kottayam
                 </p>
               </div>
 
@@ -235,13 +237,13 @@ const WeddingInvitation = () => {
               </div>
 
               <div className="flex-1 text-center">
-                <p className="font-display text-sm md:text-lg font-semibold text-foreground">Shalin Thomas</p>
+                <p className="font-display text-sm md:text-lg font-semibold text-foreground">Ditto Jose</p>
                 <p className="font-body text-muted-foreground text-[11px] md:text-sm mt-1">
-                  D/o Deenamma Thomas & Thomas M.T
+                  S/o Elsy Jose & Jose Joseph
                 </p>
                 <p className="font-body text-muted-foreground text-[11px] md:text-sm mt-1 leading-snug">
-                  Muttathettu P.C, Kavala P.O<br />
-                  Paippad, Changanacherry, Kottayam
+                  Padinjarekuttu House<br />
+                  Mutholapuram P.O, Ernakulam
                 </p>
               </div>
             </div>
